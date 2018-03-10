@@ -1,0 +1,13 @@
+ matrix_t & operator *=(   matrix_t const  & other ){
+        matrix_t res(stroki,other.stolbi);
+        //matrix_t copy2(other);
+        for (int i = 0; i<stroki; i++) {
+            for (int j = 0; j<other.stolbi; j++) {
+                for (int h = 0; h<stolbi; h++) {
+                    res.data[i][j] +=data[i][h]*other.data[h][j];
+                }
+            }
+        }
+        *this=res;
+        return *this;
+    }
